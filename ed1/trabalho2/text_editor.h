@@ -8,3 +8,6 @@ typedef struct Node{
     struct Node *next;
 }node;
 
+char* strsub(char* txt, int init_i, int final_i);
+node** split_text(char* txt);
+void print_number(node** li);

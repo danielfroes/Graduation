@@ -1,27 +1,27 @@
 #include "text_editor.h"
 
 int main(){
-    FILE *file;
+
+    FILE *txt_file;
     char file_name[100];
-    char text[100000];
+    char txt[100000];
     char aux[1000];
     int num_lines = 0;
+    
+    
     scanf("%s",file_name);    
     strcat(file_name,".ext");
-    file = fopen(file_name,"r");
-    while(fgets(aux,100000,file) != NULL){
-        num_lines++;
+    txt_file = fopen(file_name,"r");
+
+    while(!feof(txt_file)){
+        fgets(aux,100000,txt_file);
+        strcat(txt, aux);
     }
-    fclose(file);
-    file = fopen(file_name,"r");
-    printf("%d\n",num_lines);
-    for (int i = 0; i< num_lines; i++){
-        fgets(aux,100000,file);
-        strcat(text,aux);
-        
-    }
-    printf("%s",text);
+
+    node** txt_ls = split_text(txt);
     
-    fclose(file);
+    print_number(txt_ls);
+
     return 0;
+
 }
