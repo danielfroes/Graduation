@@ -9,8 +9,8 @@ public class Person {
 	public Person(String name){
 		this.name = name;
 	}
-
-    public Person(String name, String date, double height, double weight){
+	
+	public Person(String name, String date, double height, double weight){
 		this.name = name;
 		this.date = date;
 		this.height = height;
