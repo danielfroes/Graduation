@@ -5,7 +5,7 @@ int main(){
     //declaration of the variables;
     FILE *txt_file;
     char file_name[100],txt[10000], aux[1000], word[30], option;
-    int terminate = 1, move_cnt;
+    int terminate = 0, move_cnt;
     node** beg_txt; // first node of the list
     node** cursor = (node**)calloc(1,sizeof(node*)); //cursor
     node** end_txt = (node**)calloc(1,sizeof(node*)); //last node of the list
@@ -30,7 +30,7 @@ int main(){
         switch(option){
             case 's' : //print the text and terminate the program
                 print_text(beg_txt);
-                terminate = 0;
+                terminate = 1;
                 break;
 
             case 'n' : //advances the cursor to the next word

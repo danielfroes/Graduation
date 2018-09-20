@@ -103,8 +103,7 @@ void print_text(node** first){ // print the list following the given printing ru
         if(aux == *first  || aux->previous->word[0] == '\n') // if is the first node or the special character equals <ENTER>, print normally
             printf("%s", aux->word);
         
-        else if((aux->word[0] < 48) || (aux->word[0] > 57 && aux->word[0] < 65) || (aux->word[0] > 90 && aux->word[0] < 97) || (aux->word[0] > 122))
-            //if the node contains any special character, print normally
+        else if((aux->word[0] < 48) || (aux->word[0] > 57 && aux->word[0] < 65) || (aux->word[0] > 90 && aux->word[0] < 97) || (aux->word[0] > 122))//if the node contains any special character, print normally
             printf("%s",aux->word);
             
         else //if it's a word, print with a space before it;
