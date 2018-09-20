@@ -126,6 +126,30 @@ void insertion_sort(int a[], int len){
        a[j + 1] = temp;
    }
 }
+
+void merge_sort(int a[], int beg, int end){
+    /*
+    Merge sort
+        #Descrição
+            dividir para conquistar: ele divide o vetor em subvetores de maneira recursiva ate
+            que eles tenham apenas 1 unidade, assim, intercalando todos eles enquanto se desfaz
+            da pilha de recursão;
+            desvantagem: ocupa espaço de memória adicional por causa do vetor temporario na função merge
+        #Complexidade
+            Tempo:
+                worst: O(nlog(n))
+                best: Ω(nlog(n))
+            Armazenamento:
+                0(n);
+    */
+    if (beg < end) {
+        int mid = (end+beg)/2;
+
+        merge_sort(a, beg, mid);
+        merge_sort(a, mid+1, end);
+        merge(a, beg, mid, end);
+    }
+}
 void merge(int a[], int beg, int mid, int end){
     int beg1 = beg, beg2 = mid+1, begAux = 0, tam = end-beg+1;
     int *temp;
@@ -161,51 +185,6 @@ void merge(int a[], int beg, int mid, int end){
     free(temp);
 }
 
-void merge_sort(int a[], int beg, int end){
-    /*
-    Merge sort
-        #Descrição
-            dividir para conquistar: ele divide o vetor em subvetores de maneira recursiva ate
-            que eles tenham apenas 1 unidade, assim, intercalando todos eles enquanto se desfaz
-            da pilha de recursão;
-            desvantagem: ocupa espaço de memória adicional por causa do vetor temporario na função merge
-        #Complexidade
-            Tempo:
-                worst: O(nlog(n))
-                best: Ω(nlog(n))
-            Armazenamento:
-                0(n);
-    */
-    if (beg < end) {
-        int mid = (end+beg)/2;
-
-        merge_sort(a, beg, mid);
-        merge_sort(a, mid+1, end);
-        merge(a, beg, mid, end);
-    }
-}
-
-void heap(int a[], int i, int f){
-    //parar para entender o codigo depois
-    int aux = a[i];
-    int j = i * 2 + 1;
-    while (j <= f){
-        if(j < f){
-            if(a[j] < a[j + 1]){
-                j = j + 1;
-            }
-        }
-        if(aux < a[j]){
-            a[i] = a[j];
-            i = j;
-            j = 2 * i + 1;
-        }else{
-            j = f + 1;
-        }
-    }
-    a[i] = aux;
-}
-
 void heap_sort(int a[], int len){
     /*
     Heap sort
@@ -231,26 +210,25 @@ void heap_sort(int a[], int len){
     }
 }
 
-int rearrange(int a[], int beg, int end ){
-    //dar uma olhada melhor depois;
-    int lft, rgt, pivot, aux;
-    lft = beg;
-    rgt = end;
-    pivot = a[beg];
-    while(lft < rgt){
-        while(a[lft] <= pivot)
-            lft++;
-        while(a[rgt] > pivot)
-            rgt--;
-        if(lft < rgt){
-            aux = a[lft];
-            a[lft] = a[rgt];
-            a[rgt] = aux;
+void heap(int a[], int i, int f){
+    //parar para entender o codigo depois
+    int aux = a[i];
+    int j = i * 2 + 1;
+    while (j <= f){
+        if(j < f){
+            if(a[j] < a[j + 1]){
+                j = j + 1;
+            }
+        }
+        if(aux < a[j]){
+            a[i] = a[j];
+            i = j;
+            j = 2 * i + 1;
+        }else{
+            j = f + 1;
         }
     }
-    a[beg] = a[rgt];
-    a[rgt] = pivot;
-    return rgt;
+    a[i] = aux;
 }
 
 void quick_sort(int a[], int beg, int end) {
@@ -272,4 +250,26 @@ void quick_sort(int a[], int beg, int end) {
         quick_sort(a, beg, pivot-1);
         quick_sort(a, pivot+1, end);
     }
+}
+
+int rearrange(int a[], int beg, int end ){
+    //dar uma olhada melhor depois;
+    int lft, rgt, pivot, aux;
+    lft = beg;
+    rgt = end;
+    pivot = a[beg];
+    while(lft < rgt){
+        while(a[lft] <= pivot)
+            lft++;
+        while(a[rgt] > pivot)
+            rgt--;
+        if(lft < rgt){
+            aux = a[lft];
+            a[lft] = a[rgt];
+            a[rgt] = aux;
+        }
+    }
+    a[beg] = a[rgt];
+    a[rgt] = pivot;
+    return rgt;
 }
