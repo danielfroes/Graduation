@@ -1,22 +1,7 @@
-#include  "sort.h"
+#include "sort.h"
 
-void init(int a[], int len, int step, int range) {
-    int i;
-    for (i = 0; i < len; i++) {
-            int base = i * step;
-            int offset = rand() % range;
-            a[i] = base + offset;
-    }
-}
 
-void print_array(int a[], int len){
-    printf("------------------------------------------\n");
-    for(int i = 0 ; i < len ; i++)
-        printf("posição %d : %d\n",i ,a[i]);
-    printf("------------------------------------------\n");
-}
-
-void bubble_sort(int a[], int len){
+void bubble_sort(int a[], int len, cnt* counter){
     /*
     Bubble sort
         #Descrição
@@ -31,51 +16,62 @@ void bubble_sort(int a[], int len){
     int aux;
     for (int i = 1; i < len; i++){
         for (int j = 0; j < len - i; j++){
-            if (a[j] > a[j + 1]){
+            counter->comparacoes ++;
+            if (a[j] > a[j + 1]){ 
                 aux = a[j];
                 a[j] = a[j + 1];
                 a[j + 1] = aux;
+                counter->atribuicoes += 3;
             }
         }
     }
 }
 
-void selection_sort(int a[], int len){
+
+
+void selection_sort(int* a, int len, cnt* counter){ 
     /*
     Selection sort
         #Descrição
-            Percorre o aor até achar a posição do menor valor e troca esse valor
+            Percorre o vetoor até achar a posição do menor valor e troca esse valor
             com o da posição i, este que começa no 0;
         #Complexidade
             Tempo: 
                 worst:O(n²)
                 best:Ω(n²)
-    */    
-    int aux, min_pos;
-    for(int i = 0; i < len-1; i++){
-        min_pos = i;
-        for(int j = i + 1 ; j < len ; i++ ){
-            if(a[j] < a[min_pos])
-                min_pos = j;
+    */ 
+    int i, j, min, temp;
+    for (i = 0; i < (len-1); i++) 
+    {
+        min = i; 
+        for (j = (i+1); j < len; j++) {
+            counter->comparacoes++;
+            if(a[j] < a[min]) 
+                min = j;
         }
-        if (a[i] != a[min_pos]){
-            aux = a[i];
-            a[i] = a[min_pos];
-            a[min_pos] = aux;
+        
+        counter->comparacoes++;
+        if (a[i] != a[min]) {
+            temp = a[i];
+            a[i] = a[min];
+            a[min] = temp;
+            counter->atribuicoes += 3;
         }
     }
 }
 
-void cocktail_sort(int a[], int len){
+
+
+void cocktail_sort(int a[], int len, cnt* counter){
     /*
     Cocktail sort
-    #Descrição
-        Bubble sort com ida e volta;
-        Otimização do bubble sort;
-    #Complexidade
-        Tempo:
-            worst:O(n²)
-            best:Ω(n)
+        #Descrição
+            Bubble sort com ida e volta;
+            Otimização do bubble sort;
+        #Complexidade
+            Tempo:
+                worst:O(n²)
+                best:Ω(n)
     */
     int aux, swapped = 0;
     int top = len - 1;
@@ -83,28 +79,33 @@ void cocktail_sort(int a[], int len){
     while (swapped  == 0 && bottom < top){
         swapped = 1;
         for (int i = bottom; i < top; i++){
+            counter->comparacoes ++;
             if (a[i] > a[i + 1]){
                 aux = a[i];
                 a[i] = a[i + 1];
                 a[i + 1] = aux;
                 swapped = 0;
+                counter->atribuicoes += 3;
             }
         }
         top--; //tirando a parte ordenada
 
         for(int i = top ; i > bottom ; i--){
+            counter->comparacoes ++;
             if (a[i] < a[i - 1]){
                 aux = a[i];
                 a[i] = a[i + 1];
                 a[i + 1] = aux;
                 swapped = 0; 
+                counter->atribuicoes += 3;
             }
         }
         bottom++; //tirando a parte ordenada 
     }
 }
 
-void insertion_sort(int a[], int len){
+
+void insertion_sort(int a[], int len, cnt* counter){
     /*
     Insertion_sort
         #Descrição
@@ -120,14 +121,21 @@ void insertion_sort(int a[], int len){
    int i, j, temp;
    for(i = 1; i < len; i++){
        temp = a[i];
+       counter->atribuicoes ++;
+       
        for(j = i - 1; j >= 0 && (temp < a[j]); j--){
+           counter->comparacoes++;
            a[j + 1] = a[j];
+           counter->atribuicoes++;
        }
        a[j + 1] = temp;
+      counter->atribuicoes++; 
    }
 }
 
-void merge_sort(int a[], int beg, int end){
+
+
+void merge_sort(int a[], int beg, int end, cnt* counter){
     /*
     Merge sort
         #Descrição
@@ -145,22 +153,26 @@ void merge_sort(int a[], int beg, int end){
     if (beg < end) {
         int mid = (end+beg)/2;
 
-        merge_sort(a, beg, mid);
-        merge_sort(a, mid+1, end);
-        merge(a, beg, mid, end);
+        merge_sort(a, beg, mid, counter);
+        merge_sort(a, mid+1, end, counter);
+        merge(a, beg, mid, end, counter);
     }
 }
-void merge(int a[], int beg, int mid, int end){
+void merge(int a[], int beg, int mid, int end, cnt* counter){
     int beg1 = beg, beg2 = mid+1, begAux = 0, tam = end-beg+1;
     int *temp;
     temp = (int*)malloc(tam * sizeof(int));
 
     while(beg1 <= mid && beg2 <= end){
+        counter->comparacoes ++;
         if(a[beg1] < a[beg2]) {
             temp[begAux] = a[beg1];
+            counter->atribuicoes++;
             beg1++;
-        } else {
+        }
+        else{
             temp[begAux] = a[beg2];
+            counter->atribuicoes++;
             beg2++;
         }
         begAux++;
@@ -168,24 +180,29 @@ void merge(int a[], int beg, int mid, int end){
 
     while(beg1 <= mid){  //Caso ainda haja elementos na primeira metade
         temp[begAux] = a[beg1];
+        counter->atribuicoes++;
         begAux++;
         beg1++;
     }
 
     while(beg2 <= end) {   //Caso ainda haja elementos na segunda metade
         temp[begAux] = a[beg2];
+        counter->atribuicoes++;
         begAux++;
         beg2++;
     }
 
     for(begAux = beg; begAux <= end; begAux++){    //Move os elementos de volta para o a original
         a[begAux] = temp[begAux-beg];
+        counter->atribuicoes++;
     }
     
     free(temp);
 }
 
-void heap_sort(int a[], int len){
+
+
+void heap_sort(int a[], int len, cnt* counter){
     /*
     Heap sort
         #Descrição
@@ -200,28 +217,31 @@ void heap_sort(int a[], int len){
     */
     int i, aux;
     for(i=(len - 1)/2; i >= 0; i--){
-        heap(a, i, len-1);
+        heap(a, i, len-1, counter);
     }
     for (i = len-1; i >= 1; i--){
         aux = a[0];
         a [0] = a [i];
         a [i] = aux;
-        heap(a, 0, i - 1);
+        counter->atribuicoes += 3;
+        heap(a, 0, i - 1, counter);
     }
 }
-
-void heap(int a[], int i, int f){
-    //parar para entender o codigo depois
+void heap(int a[], int i, int f, cnt* counter){
     int aux = a[i];
+    counter->atribuicoes ++;
     int j = i * 2 + 1;
     while (j <= f){
         if(j < f){
+            counter->comparacoes++;
             if(a[j] < a[j + 1]){
                 j = j + 1;
             }
         }
+        counter->comparacoes++;
         if(aux < a[j]){
             a[i] = a[j];
+            counter->atribuicoes++;
             i = j;
             j = 2 * i + 1;
         }else{
@@ -229,9 +249,10 @@ void heap(int a[], int i, int f){
         }
     }
     a[i] = aux;
+    counter->atribuicoes++;
 }
 
-void quick_sort(int a[], int beg, int end) {
+void quick_sort(int *a, int left, int right, cnt* counter) {
     /*
     Quick sort
         #Descrição
@@ -244,32 +265,59 @@ void quick_sort(int a[], int beg, int end) {
                 worst: O(n²)(raro)
                 best: best: Ω(nlog(n))
     */
-    int pivot;
-    if(end > beg){
-        pivot = rearrange(a, beg, end);
-        quick_sort(a, beg, pivot-1);
-        quick_sort(a, pivot+1, end);
+    int i, j, x, y;
+     
+    i = left;
+    j = right;
+    x = a[(left + right) / 2];
+    counter->atribuicoes ++;
+    while(i <= j) {
+        while(a[i] < x && i < right) {
+            counter->comparacoes ++;
+            i++;
+        }
+        while(a[j] > x && j > left) {
+            counter->comparacoes ++;
+            j--;
+        }
+        if(i <= j) {
+            y = a[i];
+            a[i] = a[j];
+            a[j] = y;
+            counter->atribuicoes += 3;
+            i++;
+            j--;
+        }
+    }
+     
+    if(j > left) {
+        quick_sort(a, left, j, counter);
+    }
+    if(i < right) {
+        quick_sort(a, i, right, counter);
     }
 }
 
-int rearrange(int a[], int beg, int end ){
-    //dar uma olhada melhor depois;
-    int lft, rgt, pivot, aux;
-    lft = beg;
-    rgt = end;
-    pivot = a[beg];
-    while(lft < rgt){
-        while(a[lft] <= pivot)
-            lft++;
-        while(a[rgt] > pivot)
-            rgt--;
-        if(lft < rgt){
-            aux = a[lft];
-            a[lft] = a[rgt];
-            a[rgt] = aux;
-        }
-    }
-    a[beg] = a[rgt];
-    a[rgt] = pivot;
-    return rgt;
+
+
+void bubble_sentinel(int* a, int n, cnt* counter){
+    int i, j, temp, ultima_troca;
+    int flag_troca = 0;
+    int sentinela = n-1;
+    while(sentinela > 0){
+        flag_troca = 0;
+        for (j = 0; j < sentinela; j++){  
+            counter->comparacoes++;
+            if (a[j] > a[j+1]){
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+                counter->atribuicoes += 3;
+                ultima_troca = j;
+                flag_troca = 1;
+            }
+            }
+            if(flag_troca == 0) break;
+            sentinela = ultima_troca;				
+   	}
 }

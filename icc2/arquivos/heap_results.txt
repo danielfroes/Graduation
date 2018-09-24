@@ -1,0 +1,22 @@
+Para um vetor semi ordenado
+--------------------------------------------------
+para range 100
+media das atribuicoes : 1221
+media das comparacoes : 407
+-----------------------------------------------------
+para range 1000
+media das atribuicoes : 12636
+media das comparacoes : 4212
+-----------------------------------------------------
+para range 10000
+media das atribuicoes : 126235
+media das comparacoes : 42078
+-----------------------------------------------------
+para range 100000
+media das atribuicoes : 1260323
+media das comparacoes : 420107
+-----------------------------------------------------
+para range 1000000
+media das atribuicoes : 12621910
+media das comparacoes : 4207303
+-----------------------------------------------------

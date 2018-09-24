@@ -1,0 +1,68 @@
+-------Selection--------
+Vetor aleatorio
+Expoente k = 2
+Media de comparacoes: 5049
+Media de atribuicoes: 5236
+Expoente k = 3
+Media de comparacoes: 500499
+Media de atribuicoes: 502478
+Expoente k = 4
+Media de comparacoes: 50004999
+Media de atribuicoes: 50024977
+Expoente k = 5
+Media de comparacoes: 5000049999
+Media de atribuicoes: 5000249963
+Expoente k = 6
+Media de comparacoes: 500000499999
+Media de atribuicoes: 500002499956
+----------------------------
+Vetor quase ordenado
+Expoente k = 2
+Media de comparacoes: 5049
+Media de atribuicoes: 5145
+Expoente k = 3
+Media de comparacoes: 500499
+Media de atribuicoes: 501606
+Expoente k = 4
+Media de comparacoes: 50004999
+Media de atribuicoes: 50016135
+Expoente k = 5
+Media de comparacoes: 5000049999
+Media de atribuicoes: 5000160798
+Expoente k = 6
+Media de comparacoes: 500000499999
+Media de atribuicoes: 500001609198
+----------------------------
+Vetor inversamente ordenado
+Expoente k = 2
+Media de comparacoes: 5049
+Media de atribuicoes: 5238
+Expoente k = 3
+Media de comparacoes: 500499
+Media de atribuicoes: 502457
+Expoente k = 4
+Media de comparacoes: 50004999
+Media de atribuicoes: 50024611
+Expoente k = 5
+Media de comparacoes: 5000049999
+Media de atribuicoes: 5000246271
+Expoente k = 6
+Media de comparacoes: 500000499999
+Media de atribuicoes: 500002462100
+----------------------------
+Vetor vários valores repetidos
+Expoente k = 2
+Media de comparacoes: 5049
+Media de atribuicoes: 5205
+Expoente k = 3
+Media de comparacoes: 500499
+Media de atribuicoes: 502454
+Expoente k = 4
+Media de comparacoes: 50004999
+Media de atribuicoes: 50024959
+Expoente k = 5
+Media de comparacoes: 5000049999
+Media de atribuicoes: 5000249942
+Expoente k = 6
+Media de comparacoes: 500000499999
+Media de atribuicoes: 500002499940

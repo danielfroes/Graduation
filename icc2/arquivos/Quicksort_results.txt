@@ -1,0 +1,88 @@
+Para um vetor aleatorio
+--------------------------------------------------
+para range 100
+media das atribuicoes : 1929
+media das comparacoes : 1332
+-----------------------------------------------------
+para range 1000
+media das atribuicoes : 26106
+media das comparacoes : 22779
+-----------------------------------------------------
+para range 10000
+media das atribuicoes : 330433
+media das comparacoes : 319666
+-----------------------------------------------------
+para range 100000
+media das atribuicoes : 3973981
+media das comparacoes : 4287399
+-----------------------------------------------------
+para range 1000000
+media das atribuicoes : 46817170
+media das comparacoes : 49901020
+-----------------------------------------------------
+Para um vetor semi ordenado
+--------------------------------------------------
+para range 100
+media das atribuicoes : 1166
+media das comparacoes : 1490
+-----------------------------------------------------
+para range 1000
+media das atribuicoes : 12136
+media das comparacoes : 24562
+-----------------------------------------------------
+para range 10000
+media das atribuicoes : 122152
+media das comparacoes : 345132
+-----------------------------------------------------
+para range 100000
+media das atribuicoes : 1219236
+media das comparacoes : 4446272
+-----------------------------------------------------
+para range 1000000
+media das atribuicoes : 12185440
+media das comparacoes : 54436743
+-----------------------------------------------------
+Para um vetor semi ordenado inversamente
+--------------------------------------------------
+para range 100
+media das atribuicoes : 2019
+media das comparacoes : 1126
+-----------------------------------------------------
+para range 1000
+media das atribuicoes : 23946
+media das comparacoes : 20324
+-----------------------------------------------------
+para range 10000
+media das atribuicoes : 244345
+media das comparacoes : 294420
+-----------------------------------------------------
+para range 100000
+media das atribuicoes : 2449172
+media das comparacoes : 3949227
+-----------------------------------------------------
+para range 1000000
+media das atribuicoes : 24504189
+media das comparacoes : 49467014
+-----------------------------------------------------
+Para um vetor com numeros repetidos
+--------------------------------------------------
+para range 100
+media das atribuicoes : 2349
+media das comparacoes : 708
+-----------------------------------------------------
+para range 1000
+media das atribuicoes : 30247
+media das comparacoes : 16076
+-----------------------------------------------------
+para range 10000
+media das atribuicoes : 371593
+media das comparacoes : 249144
+-----------------------------------------------------
+para range 100000
+media das atribuicoes : 4394360
+media das comparacoes : 3566817
+-----------------------------------------------------
+para range 1000000
+media das atribuicoes : 50928693
+media das comparacoes : 43039814
+-----------------------------------------------------

@@ -17,7 +17,7 @@ class Yoshi
     /**
      * Cria um objeto com posicao, color e direcao por default
      */
-    public Yoshi() {
+    public Yoshi( String color, int posicao_x, int posicao_y) {
         posicao_x=0;
         posicao_y=0;
         color = "verde";
@@ -61,20 +61,23 @@ class Yoshi
     /**
      * Mover para abaixo
      */
+    public void irParaAbaixo( int distancia ){
+        this.posicao_y -= distancia;
+        visualizar();
+    }
+
     public void irParaEsquerda(int distancia){
         this.posicao_x -= distancia;
+        visualizar();
     }
     public void irParaCima(int distancia){
         this.posicao_y += distancia;
+        visualizar();
     }
-    public void irParaDireita(int distancia){
+    public void irParaDireita(int distancia) {
         this.posicao_x += distancia;
+        visualizar();
     }
-    public void irParaBaixo(int distancia){
-        this.posicao_y -= distancia;
-    }
-
-
     /**
      * Visualiza objeto no Canvas
      */
