@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "digitalcircuits.h": "c",
+        "stdio.h": "c"
+    }
+}

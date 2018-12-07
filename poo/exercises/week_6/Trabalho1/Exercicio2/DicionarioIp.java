@@ -5,20 +5,14 @@ import java.util.Iterator;
 /**
  * DicionarioIP
  */
-public class DicionarioIP {
+public class DicionarioIp {
 
-    
     private HashMap <String, String> dicionario;
-    
-    
-
 
     public DicionarioIP()
     {
         dicionario = new HashMap <String, String>();
     }
-
-
 
     public boolean adicionar(String palavra_ingles, String sinonimo) 
     {
