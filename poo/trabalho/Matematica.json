@@ -1,0 +1,250 @@
+{
+    "Materias":
+    [
+        {
+            "nome" : "Geometria Analítica",
+            "creditos" : 4,
+            "periodo" : 1,
+            "completa" : false,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "terça"
+                },
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Cálculo I",
+            "creditos" : 6,
+            "completa" : false,
+            "periodo" : 1,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "quarta"
+                },
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "sexta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Fundamentos para a Matemática do Ensino Superior",
+            "creditos" : 4,
+            "completa" : false,
+            "periodo" : 1,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "terça"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Introdução à Programação de Computadores",
+            "creditos" : 6,
+            "completa" : false,
+            "periodo" : 1,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "quarta"
+                },
+                {
+                    "horarioInicio" : "14:20:00",
+                    "horarioFinal" : "16:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Cálculo II",
+            "creditos" : 6,
+            "completa" : false,
+            "periodo" : 2,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "quarta"
+                },
+                {
+                    "horarioInicio" : "8:10:00",
+                    "horarioFinal" : "9:50:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":["Cálculo I"]
+        },
+        {
+            "nome" : "Introdução aos Estudos da Educação",
+            "creditos" : 4,
+            "completa" : false,
+            "periodo" : 2,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "14:20:00",
+                    "horarioFinal" : "16:00",
+                    "diaDaSemana" : "terça"
+                },
+                {
+                    "horarioInicio" : "14:20:00",
+                    "horarioFinal" : "16:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Elementos de Matemática",
+            "creditos" : 4,
+            "completa" : false,
+            "periodo" : 2,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "terça"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Álgebra Linear",
+            "creditos" : 6,
+            "completa" : false,
+            "periodo" : 2,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "quarta"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "sexta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Física I",
+            "creditos" : 5,
+            "completa" : false,
+            "periodo" : 3,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:50:00",
+                    "diaDaSemana" : "quarta"
+                },
+                {
+                    "horarioInicio" : "10:10:00",
+                    "horarioFinal" : "11:00:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":[]
+        },
+        {
+            "nome" : "Cálculo III",
+            "creditos" : 4,
+            "completa" : false,
+            "periodo" : 3,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "16:20:00",
+                    "horarioFinal" : "18:00:00",
+                    "diaDaSemana" : "terça"
+                },
+                {
+                    "horarioInicio" : "16:20:00",
+                    "horarioFinal" : "18:00:00",
+                    "diaDaSemana" : "quinta"
+                }
+            ],
+            "requisitos":["Cálculo I"]
+        },
+        {
+            "nome" : "Cálculo III",
+            "creditos" : 4,
+            "completa" : false,
+            "periodo" : 3,
+            "horarios" :
+            [
+                {
+                    "horarioInicio" : "16:20:00",
+                    "horarioFinal" : "18:00:00",
+                    "diaDaSemana" : "segunda"
+                },
+                {
+                    "horarioInicio" : "16:20:00",
+                    "horarioFinal" : "18:00:00",
+                    "diaDaSemana" : "quarta"
+                }
+            ],
+            "requisitos":["Cálculo I"]
+        }
+    ]
+}
